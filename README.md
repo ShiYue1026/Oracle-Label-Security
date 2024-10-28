@@ -96,11 +96,11 @@
 
 定义不同的用户组，以限制访问权限：
 
-- *DBA*（父级）      
+- *Group DBA（DBA）*（父级）      
 
-  - *Emp*
+  - *Group Employee（EMP）*
 
-  - *Cust*
+  - *Group Customer（Cust）*
 
 <br>
 
