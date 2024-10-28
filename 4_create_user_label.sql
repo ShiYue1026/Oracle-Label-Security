@@ -53,8 +53,7 @@ BEGIN
     SA_USER_ADMIN.SET_LEVELS (
         policy_name => 'SUP_OLS_POL',
         user_name => 'CATH',
-        max_level => 'C',
-        min_level => 'P'
+        max_level => 'C'
     );
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name => 'SUP_OLS_POL',
@@ -69,7 +68,7 @@ BEGIN
     SA_USER_ADMIN.SET_USER_PRIVS (
         policy_name => 'SUP_OLS_POL',
         user_name => 'CATH',
-        privileges => 'writedown'
+        privileges => 'writeup'
     );
 END;
 /
@@ -78,7 +77,8 @@ BEGIN
     SA_USER_ADMIN.SET_LEVELS (
         policy_name => 'SUP_OLS_POL',
         user_name => 'DAVE',
-        max_level => 'C'
+        max_level => 'C',
+        min_level => 'P'
     );
     SA_USER_ADMIN.SET_COMPARTMENTS (
         policy_name => 'SUP_OLS_POL',
@@ -93,7 +93,7 @@ BEGIN
     SA_USER_ADMIN.SET_USER_PRIVS (
         policy_name => 'SUP_OLS_POL',
         user_name => 'DAVE',
-        privileges => 'writeup'
+        privileges => 'writedown'
     );
 END;
 /
