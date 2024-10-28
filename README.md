@@ -36,7 +36,7 @@
 **CUSTOMERS Table**
 
 - Only **Customer Service** can view and modify the table.
-- 
+  
 - Other employees have no access.
 
 **PRODUCTS Table**
@@ -58,13 +58,13 @@
 **SALES Table**
 
 - Only **Customer**, **Cashier**, and **Customer Service** can view records.
-- 
+  
 - Only **Cashier** can modify the table.
 
 **SALEDETAILS Table**
 
 - Only **Cashier** and **Customer Service** can view records.
-- 
+  
 - Only **Cashier** can modify the table.
 
   
