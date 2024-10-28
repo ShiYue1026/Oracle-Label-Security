@@ -41,7 +41,7 @@
 
 - [cashier]() can `WRITEUP` the level of the tuple for a product
 
-  ( 应用场景：在某件商品的库存不足时，[cashier]()可以通过 `WRITEUP` 权限将新产品的level设为‘C’，以限制顾客访问，确保仅有超市内部人员能查看该产品的一些具体信息。当该[buyer]()采购完成后，可以使用 `WRITEDOWN` 权限将产品的level重新设为‘P’，以便顾客可以获得该产品更具体的信息并提供反馈）
+  ( 应用场景：在某件商品的库存不足时，[cashier]()可以通过 `WRITEUP` 权限将该商品的level设为‘C’，以限制顾客访问，确保仅有超市内部人员能查看该商品的一些具体信息。当该[buyer]()采购完成后，可以使用 `WRITEDOWN` 权限将该商品的level重新设为‘P’，以便顾客可以获得该商品的信息并进行购买）
 
 **PURCHASERECORDS表**
 
