@@ -1,6 +1,7 @@
-<div align="center">
-<h1>Oracle OLS</h1>
-</div>
+# Oracle OLS
+
+# 数据库ER图
+![image](https://github.com/user-attachments/assets/12a2b32c-16a1-43e0-b2ac-7c144e05470f)
 
 # 需求
 
