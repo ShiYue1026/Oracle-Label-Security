@@ -16,7 +16,8 @@
 - **HR**: Can view all employee information.
 - Other employees can view only regular employee information.
 - Other employees cannot view information of **DBA** and **HR**.
-- **HR** has `WRITEUP` privilege to increase the confidentiality level for an employee’s data if needed. (For example, if an employee's information requires higher confidentiality.)
+- **HR** has `WRITEUP` privilege to increase the confidentiality level for an employee’s data if needed.
+   - Use case: if an employee's information requires higher confidentiality.)
 
 **SUPPLIERS Table**
 
@@ -39,17 +40,9 @@
 
 - **Buyer** has `WRITEDOWN` privilege to lower a product's confidentiality level.
 
-- Cashier
+- Cashier has `WRITEUP` privilege to increase a product's confidentiality level.
 
-   has 
-
-  ```
-  WRITEUP
-  ```
-
-   privilege to increase a product's confidentiality level.
-
-  - **Use case**: When a product is out of stock, **Cashier** can use the `WRITEUP` privilege to change the product’s level to "Confidential," restricting customer access and ensuring that only supermarket staff can see product details. Once restocked, **Buyer** can use `WRITEDOWN` to reset the level, allowing customers to view and purchase it.
+  - Use case: When a product is out of stock, **Cashier** can use the `WRITEUP` privilege to change the product’s level to "Confidential," restricting customer access and ensuring that only supermarket staff can see product details. Once restocked, **Buyer** can use `WRITEDOWN` to reset the level, allowing customers to view and purchase it.
 
 **PURCHASERECORDS Table**
 
