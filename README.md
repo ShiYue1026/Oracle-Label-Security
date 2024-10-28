@@ -61,64 +61,59 @@
 
 - Only  [cashier]() can modify the table.
 
-<br>
-<br>
+
 
 # OLS设计
 
 **1. Level**
 
-- *Public（P）*：100
-- *Confidential（C）*：200
-- *Secret（S）*：300
-- *Top Secret（TS）*：400
+- *Public*：100
+- *Confidential*：200
+- *Secret*：300
+- *Top Secret* ：400
 
 
-<br>
 
 **2. Compartment**
 
 不同业务分区：
 
-- *Comp_Employee（CE）* 
-- *Comp_Supplier（CS）* 
-- *Comp_Category（CC）* 
+- *Comp_Employee* （CE）
+- *Comp_Supplier* （CS）
+- *Comp_Category* （CC）
 
-- *Comp_Product（CP）* 
-- *Comp_PurchaseRecord（CPR）* 
-- *Comp_Customer（CCC）* 
-- *Comp_Sale（CSA）* 
-- *Comp_SaleDetail（CSD）*  
+- *Comp_Product* （CP）
+- *Comp_PurchaseRecord* （CPR）
+- *Comp_Customer* （CCC）
+- *Comp_Sale* （CSA）
+- *Comp_SaleDetail*  （CSD）
 
-<br>
+
 
 **3. Group**
 
 定义不同的用户组，以限制访问权限：
 
-- *Group DBA（DBA）*（父级）      
+- *DBA*（父级）      
 
-  - *Group Employee（EMP）*
+  - *Emp*
 
-  - *Group Customer（Cust）*
-
-<br>
-
-**4. Tuple Label**
-
-只有管理员能访问的业务：
-
-- USER_ROLES表中的tuple：
-
-  - DBA的用户信息：*TS || DBA*   （只有DBA可以访问）
-
-  - 普通员工的用户信息：*S |CE| Emp*   （HR可以访问）
-
-  - 顾客的用户信息：*C |CCC| Emp*  （Customer Service可以访问）
+  - *Cust*
 
     
 
+**4. Tuple Label**
+
+
+
 顾客无权访问的的业务：
+
+- USER_ROLES表中的tuple：
+  - DBA的用户信息：*TS || DBA*   （只有DBA可以访问）
+  - 普通员工的用户信息：*S |CE| Emp*   （HR可以访问）
+  - 顾客的用户信息：*C |CCC| Emp*  （Customer Service可以访问）
+
+
 
 - EMPLOYEES表中的tuple：
 
@@ -126,8 +121,6 @@
   - HR那条：*S | CE | Emp*
 
   - 其余：*C | CE | Emp*
-
-  其余用户没有insert，update，delete权限
 
   
 
@@ -157,7 +150,7 @@
 - SALES表中的tuple：
   - *P | CSA | Emp, Cust*
 
-<br>
+
 
 **5. User Label** (Level | Compartment | Group)
 
@@ -189,8 +182,7 @@
   - *P | CC, CP, CSA | Cust*
   - 无写权限
 
-<br>
-<br>
+
 
 # 实现步骤
 
@@ -232,12 +224,12 @@
    - 执行`4_create_user_label.sql`
 
 
-（执行上述过程后初始化的一些用户）：
+
+==（执行上述过程后初始化的一些用户）：==
 
 ![image-20241028001406418](https://github.com/user-attachments/assets/da252694-2e57-4d86-952d-50a10e570f6d)
 
-<br>
-<br>
+
 
 # 测试
 
@@ -279,14 +271,13 @@
 
 - BUYER用户使用writeup特权对外隐藏3号商品
 
-   ![image-20241028145921466](https://github.com/user-attachments/assets/90b9fd75-8d69-45cf-9964-3f216af94995)
+  ![image-20241028145921466](https://github.com/user-attachments/assets/90b9fd75-8d69-45cf-9964-3f216af94995)
 
 - Cashier用户使用writedown特权对外公开3号商品
 
   ![image-20241028150018768](https://github.com/user-attachments/assets/23becc6d-f2e0-4a9f-aa0d-dc0432c2fa37)
 
-<br>
-<br>
+
 
 # 附录
 
