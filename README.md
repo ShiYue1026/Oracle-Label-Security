@@ -68,10 +68,10 @@
 
 **1. Level**
 
-- *Public*：100
-- *Confidential*：200
-- *Secret*：300
-- *Top Secret* ：400
+- *Public*：（P) 100
+- *Confidential*：（C）200
+- *Secret*：（S）300
+- *Top Secret*：（TS）400
 
 
 <br>
