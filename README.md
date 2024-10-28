@@ -1,8 +1,5 @@
 # Oracle OLS
 
-# 数据库ER图
-![image](https://github.com/user-attachments/assets/12a2b32c-16a1-43e0-b2ac-7c144e05470f)
-
 # 需求
 
 （[dba]()：can see and modify all things）
@@ -40,11 +37,11 @@
 
 - Only [buyer]() and [cashier]() are able to view and modify entire table.
 
-- [buyer]() can `WRITEUP` the level of the tuple for a product
+- [buyer]() can `WRITEDOWN` the level of the tuple for a product
 
-- [cashier]() can `WRITEDOWN` the level of the tuple for a product
+- [cashier]() can `WRITEUP` the level of the tuple for a product
 
-  ( 应用场景：在准备发布新产品时，[buyer]()可以通过 `WRITEUP` 权限将新产品的level设为“C”，以限制顾客访问。确保仅有超市内部人员能查看该产品的一些具体信息。随着新产品的推广，可以根据市场反馈，[cashier]()可以使用 `WRITEDOWN` 权限将产品的level降低，以便顾客可以获得该产品更具体的信息并提供反馈）
+  ( 应用场景：在某件商品的库存不足时，[cashier]()可以通过 `WRITEUP` 权限将新产品的level设为‘C’，以限制顾客访问，确保仅有超市内部人员能查看该产品的一些具体信息。当该[buyer]()采购完成后，可以使用 `WRITEDOWN` 权限将产品的level重新设为‘P’，以便顾客可以获得该产品更具体的信息并提供反馈）
 
 **PURCHASERECORDS表**
 
@@ -270,13 +267,13 @@
 
   ![image-20241028145406404](https://github.com/user-attachments/assets/6ff42e2d-dfc3-4166-9acf-afa0f05fb302)
 
-- BUYER用户使用writeup特权对外隐藏3号商品
+- CASHIER用户使用writeup特权对外隐藏3号商品
 
-  ![image-20241028145921466](https://github.com/user-attachments/assets/90b9fd75-8d69-45cf-9964-3f216af94995)
+  ![img](https://private-user-images.githubusercontent.com/110983008/380754000-b4fc6e6a-2a24-4f25-b49f-67c9ac4fbf56.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAxMjU2OTgsIm5iZiI6MTczMDEyNTM5OCwicGF0aCI6Ii8xMTA5ODMwMDgvMzgwNzU0MDAwLWI0ZmM2ZTZhLTJhMjQtNGYyNS1iNDlmLTY3YzlhYzRmYmY1Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDI4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAyOFQxNDIzMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZGI1Yzk2N2MyODZhZTZjNDQwMDkwMThmNzUzNWUxNmQzYjNlM2ZiZmVhNDYyNzgyNDJmYjIxM2MwZjRlZjY0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.4oPPX_qC2wT18NkzjLaLZPX7j6xUwIepgdGApikC3lY)
 
-- Cashier用户使用writedown特权对外公开3号商品
+- BUYER用户使用writedown特权对外公开3号商品
 
-  ![image-20241028150018768](https://github.com/user-attachments/assets/23becc6d-f2e0-4a9f-aa0d-dc0432c2fa37)
+  ![img](https://github-production-user-asset-6210df.s3.amazonaws.com/110983008/380755417-36cc5af2-d473-48e8-9089-d1de861eec64.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241028T142616Z&X-Amz-Expires=300&X-Amz-Signature=215bfcab73f58a9bc1b77556053f9b348d2ff004cb2d135423e5225e3e4673bc&X-Amz-SignedHeaders=host)
 
 
 
@@ -376,4 +373,3 @@ UPDATE project2.products SET ols_col = CHAR_TO_LABEL('SUP_OLS_POL','P:CP:EMP,CUS
 ```sql
 SELECT * FROM ALL_SA_USER_PRIVS WHERE user_name = 'BOB';
 ```
-
