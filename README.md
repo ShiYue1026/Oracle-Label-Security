@@ -80,15 +80,15 @@
 
 不同业务分区：
 
-- *Comp_Employee* （CE）
-- *Comp_Supplier* （CS）
-- *Comp_Category* （CC）
+- *Comp_Employee（CE）* 
+- *Comp_Supplier（CS）* 
+- *Comp_Category（CC）* 
 
-- *Comp_Product* （CP）
-- *Comp_PurchaseRecord* （CPR）
-- *Comp_Customer* （CCC）
-- *Comp_Sale* （CSA）
-- *Comp_SaleDetail*  （CSD）
+- *Comp_Product（CP）* 
+- *Comp_PurchaseRecord（CPR）* 
+- *Comp_Customer（CCC）* 
+- *Comp_Sale（CSA）* 
+- *Comp_SaleDetail（CSD）*  
 
 <br>
 
