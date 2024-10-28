@@ -1,4 +1,6 @@
 # Oracle OLS
+# ER图
+<img width="431" alt="image" src="https://github.com/user-attachments/assets/e4dfbfed-9253-4ffc-bc9f-7d435309e80a">
 
 # 需求
 
