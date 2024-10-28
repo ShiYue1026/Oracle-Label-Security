@@ -8,15 +8,21 @@
 **USER_ROLES Table**
 
 - **HR**: Can view all employee user information.
+
 - **Customer Service**: Can view all customer user information.
 
 **EMPLOYEES Table**
 
 - **Customers**: Cannot view any data in this table.
+  
 - **HR**: Can view all employee information.
+  
 - Other employees can view only regular employee information.
+  
 - Other employees cannot view information of **DBA** and **HR**.
+  
 - **HR** has `WRITEUP` privilege to increase the confidentiality level for an employee’s data if needed.
+  
    - Use case: if an employee's information requires higher confidentiality.)
 
 **SUPPLIERS Table**
@@ -30,6 +36,7 @@
 **CUSTOMERS Table**
 
 - Only **Customer Service** can view and modify the table.
+- 
 - Other employees have no access.
 
 **PRODUCTS Table**
@@ -51,12 +58,13 @@
 **SALES Table**
 
 - Only **Customer**, **Cashier**, and **Customer Service** can view records.
+- 
 - Only **Cashier** can modify the table.
 
 **SALEDETAILS Table**
 
 - Only **Cashier** and **Customer Service** can view records.
-
+- 
 - Only **Cashier** can modify the table.
 
   
@@ -102,16 +110,21 @@ Data tuples for which customers have no access:
   - DBA user information: *TS || DBA* (Only DBA can view)
   - Regular employee information: *S | CE | Emp* (HR can view)
   - Customer information: *C | CCC | Emp* (Customer Service can view)
+    
 - **EMPLOYEES Table**:
   - DBA row: *TS | CE | Emp*
   - HR row: *S | CE | Emp*
   - Others: *C | CE | Emp*
+    
 - **SUPPLIERS Table**:
   - *C | CS | Emp*
+    
 - **CUSTOMERS Table**:
   - *C | CCC | Emp*
+    
 - **PURCHASERECORDS Table**:
   - *C | CPR | Emp*
+    
 - **SALEDETAILS Table**:
   - *C | CSD | Emp*
 
@@ -119,8 +132,10 @@ Data tuples for which customers have access:
 
 - **CATEGORIES Table**:
   - *P | CC | Emp, Cust*
+    
 - **PRODUCTS Table**:
   - *P | CP | Emp, Cust*
+    
 - **SALES Table**:
   - *P | CSA | Emp, Cust*
 
@@ -216,6 +231,7 @@ After completing these steps, the system is initialized with the required users:
   ![image-20241028144415233](https://github.com/user-attachments/assets/2d2e2aaf-e9a2-4d21-a5d3-5c03dd994da8)
   
 - HR uses `WRITEUP` privilege to hide specific employee information.
+  
   ![image-20241028144954078](https://github.com/user-attachments/assets/6f60ba60-1189-4aa9-a0a9-e03742454204)
   
 
