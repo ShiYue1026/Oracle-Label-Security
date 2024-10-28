@@ -1,2 +1,1 @@
-*.cs linguist-language=PLSQL#
-*.ico linguist-language=PLSQL#
+*.sql linguist-language=PLSQL
