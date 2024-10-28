@@ -186,7 +186,7 @@
 
 # 实现步骤
 
-1. 登录**/ as sysdba**用户
+1. 登录**SYSDBA**用户
 
    - 执行`0_create_schema.sql`
    - 执行`1_create_table.sql`
@@ -195,7 +195,7 @@
 
    - 执行`2_create_ols.sql`
 
-3. 再次登录**/ as sysdba**用户，
+3. 再次登录**SYSDBA**用户，
 
    - 创建一些用户及各种procedure 并初始化一些数据到对应的表中
 
