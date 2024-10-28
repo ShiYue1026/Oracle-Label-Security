@@ -358,9 +358,13 @@ COLUMN PAYMENTMETHOD FORMAT A10
 **writeup && writedown特权**
 
 ```sql
-UPDATE project2.employees SET ols_col = CHAR_TO_LABEL('SUP_OLS_POL','C:CE:EMP') WHERE username='ETHAN';
+-- 将ETHAN的员工信息的level提升到'Secret'级别
+UPDATE project2.employees SET ols_col = CHAR_TO_LABEL('SUP_OLS_POL','S:CE:EMP') WHERE username='ETHAN';
 
+-- 将3号商品的level提升到'Confidential'级别
 UPDATE project2.products SET ols_col = CHAR_TO_LABEL('SUP_OLS_POL','C:CP:EMP,CUST') WHERE productid=3;
+
+-- 将3号商品的level降低到'Public'级别
 UPDATE project2.products SET ols_col = CHAR_TO_LABEL('SUP_OLS_POL','P:CP:EMP,CUST') WHERE productid=3;
 ```
 
