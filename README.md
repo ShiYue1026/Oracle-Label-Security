@@ -95,7 +95,7 @@ Different business divisions:
 
 Define user groups to control access permissions:
 
-- DBA (Parent)
+- *DBA* (Parent)
   - *Employee* (Emp)
   - *Customer* (Cust)
 
