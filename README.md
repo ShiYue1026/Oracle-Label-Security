@@ -152,13 +152,13 @@ Data tuples for which customers have access:
 
   - *C | CE, CC, CP, CSA, CSD | Emp*
   - Write access to **Products**, **Sales**, and **SaleDetails** tables.
-  - Has `WRITEDOWN` privilege to lower confidentiality level for products.
+  - Has `WRITEUP` privilege to increase confidentiality level for products.
 
 - **Buyer**:
 
   - *C | CE, CS, CC, CP, CPR | Emp*
   - Write access to **Suppliers**, **Categories**, **Products**, and **PurchaseRecords** tables.
-  - Has `WRITEUP` privilege to increase confidentiality level for products.
+  - Has `WRITEDOWN` privilege to lower confidentiality level for products.
 
 - **Customer Service**:
 
